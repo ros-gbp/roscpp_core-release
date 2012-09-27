@@ -2,13 +2,13 @@ Source: ros-fuerte-roscpp-core
 Section: misc
 Priority: extra
 Maintainer: Dirk Thomas <dthomas@willowgarage.com>
-Build-Depends: debhelper (>= 7.0.50~), ros-fuerte-catkin,libboost1.40-all-dev,ros-fuerte-ros
+Build-Depends: debhelper (>= 7.0.50~), ros-fuerte-catkin,libboost1.46-all-dev,ros-fuerte-ros
 Homepage: http://www.ros.org/wiki/roscpp_core
 Standards-Version: 3.9.2
 
 Package: ros-fuerte-roscpp-core
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-fuerte-ros,libboost1.40-all-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost1.46-all-dev,ros-fuerte-ros
 Description: Underlying data libraries for roscpp messages.
  .
  This stack contains the packages:
