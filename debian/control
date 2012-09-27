@@ -8,6 +8,6 @@ Standards-Version: 3.9.2
 
 Package: ros-groovy-roscpp-core
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-groovy-roscpp-core
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-groovy-rostime,ros-groovy-cpp-common,ros-groovy-roscpp-traits,ros-groovy-roscpp-serialization
 Description: Underlying data libraries for roscpp messages.
 
