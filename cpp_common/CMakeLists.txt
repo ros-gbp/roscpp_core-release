@@ -1,5 +1,9 @@
+cmake_minimum_required(VERSION 2.8)
 project(cpp_common)
 find_package(catkin REQUIRED)
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES ${PROJECT_NAME})
 
 include(CheckIncludeFile)
 include(CheckFunctionExists)
@@ -26,15 +30,9 @@ endif(HAVE_GLIBC_BACKTRACE)
 add_library(${PROJECT_NAME} src/debug.cpp)
 
 install(TARGETS ${PROJECT_NAME}
-    ARCHIVE DESTINATION lib
-    LIBRARY DESTINATION lib
-  )
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
 
 install(DIRECTORY include/
-        DESTINATION include
-        FILES_MATCHING PATTERN "*.h"
-        PATTERN ".svn" EXCLUDE)
-
-catkin_project(cpp_common
-  INCLUDE_DIRS include
-  )
+  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h")
