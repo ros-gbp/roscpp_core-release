@@ -1,0 +1,19 @@
+Source: ros-fuerte-roscpp-core
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@willowgarage.com>
+Build-Depends: debhelper (>= 7.0.50~), ros-fuerte-catkin,libboost1.40-all-dev,ros-fuerte-ros
+Homepage: http://www.ros.org/wiki/roscpp_core
+Standards-Version: 3.9.2
+
+Package: ros-fuerte-roscpp-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-fuerte-ros,libboost1.40-all-dev
+Description: Underlying data libraries for roscpp messages.
+ .
+ This stack contains the packages:
+ * roscpp_traits: roscpp_traits contains the message traits code as described in MessagesTraits. This package is a component of roscpp.
+ * cpp_common: cpp_common contains C++ code for doing things that are not necessarily ROS related, but are useful for multiple packages. This includes things like the ROS_DEPRECATED and ROS_FORCE_INLINE macros, as well as code for getting backtraces. This package is a component of roscpp.
+ * rostime: Time and Duration implementations for C++ libraries, including roscpp.
+ * roscpp_serialization: roscpp_serialization contains the code for serialization as described in MessagesSerializationAndAdaptingTypes. This package is a component of roscpp.
+
