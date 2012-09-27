@@ -2,12 +2,12 @@ Source: ros-groovy-rostime
 Section: misc
 Priority: extra
 Maintainer: Dirk Thomas <dthomas@willowgarage.com>
-Build-Depends: debhelper (>= 7.0.50~), ros-groovy-cpp-common,ros-groovy-catkin,libboost-all-dev
+Build-Depends: debhelper (>= 7.0.50~), libboost1.46-all-dev,ros-groovy-cpp-common,ros-groovy-catkin
 Homepage: 
 Standards-Version: 3.9.2
 
 Package: ros-groovy-rostime
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ros-groovy-cpp-common,libboost-all-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost1.46-all-dev,ros-groovy-cpp-common
 Description: Time and Duration implementations for C++ libraries, including roscpp.
 
