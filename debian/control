@@ -1,0 +1,13 @@
+Source: ros-groovy-rostime
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@willowgarage.com>
+Build-Depends: debhelper (>= 7.0.50~), libboost1.46-all-dev,ros-groovy-catkin,ros-groovy-roscpp-core
+Homepage: 
+Standards-Version: 3.9.2
+
+Package: ros-groovy-rostime
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost1.46-all-dev,ros-groovy-roscpp-core
+Description: Time and Duration implementations for C++ libraries, including roscpp.
+
