@@ -1,0 +1,12 @@
+Source: roscpp-core
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@willowgarage.com>
+Build-Depends: debhelper (>= 7.0.50~), 
+Homepage: http://www.ros.org/wiki/roscpp_core
+Standards-Version: 3.9.2
+
+Package: roscpp-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-groovy-roscpp-traits,ros-groovy-cpp-common,ros-groovy-rostime,ros-groovy-roscpp-serialization
+Description: Underlying data libraries for roscpp messages.
