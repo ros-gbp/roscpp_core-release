@@ -1,21 +1,31 @@
-cmake_minimum_required(VERSION 2.8.3)
 project(roscpp_serialization)
-find_package(catkin REQUIRED COMPONENTS cpp_common roscpp_traits rostime)
-catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES roscpp_serialization
-  CATKIN_DEPENDS cpp_common roscpp_traits rostime
-)
 
-include_directories(include ${catkin_INCLUDE_DIRS})
-link_directories(${catkin_LIBRARY_DIRS})
+find_package(catkin REQUIRED)
+
+find_package(cpp_common REQUIRED)
+include_directories(${cpp_common_INCLUDE_DIRS})
+
+find_package(rostime REQUIRED)
+include_directories(${rostime_INCLUDE_DIRS})
+
+find_package(roscpp_traits REQUIRED)
+include_directories(${roscpp_traits_INCLUDE_DIRS})
+
+include_directories(include)
 
 add_library(roscpp_serialization src/serialization.cpp)
 
 install(TARGETS roscpp_serialization
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+  )
 
 install(DIRECTORY include/
-  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.h")
+        DESTINATION include
+        FILES_MATCHING PATTERN "*.h"
+        PATTERN ".svn" EXCLUDE)
+
+catkin_project(roscpp_serialization
+  LIBRARIES roscpp_serialization
+  INCLUDE_DIRS include
+  )
