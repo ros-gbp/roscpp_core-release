@@ -169,7 +169,7 @@ namespace ros {
   }
 
   template<class T>
-  bool DurationBase<T>::isZero() const
+  bool DurationBase<T>::isZero()
   {
     return sec == 0 && nsec == 0;
   }

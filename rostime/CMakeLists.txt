@@ -1,21 +1,13 @@
-cmake_minimum_required(VERSION 2.8.3)
 project(rostime)
+find_package(catkin REQUIRED)
+include_directories(include)
 
-find_package(catkin REQUIRED COMPONENTS cpp_common)
-find_package(Boost REQUIRED COMPONENTS date_time system thread)
-catkin_package(
-  INCLUDE_DIRS include
-  LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS cpp_common
-  DEPENDS Boost
-)
-
-include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIR})
+find_package(cpp_common REQUIRED)
+include_directories(${cpp_common_INCLUDE_DIRS})
+find_package(Boost REQUIRED COMPONENTS date_time thread)
 
 add_library(rostime 
-  src/duration.cpp
-  src/rate.cpp
-  src/time.cpp)
+  src/time.cpp src/rate.cpp src/duration.cpp)
 
 target_link_libraries(rostime ${Boost_LIBRARIES})
 if(NOT APPLE)
@@ -23,14 +15,16 @@ if(NOT APPLE)
 endif()
 
 install(TARGETS rostime
-  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib
+  )
 
 install(DIRECTORY include/
-  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
-  FILES_MATCHING PATTERN "*.h")
+        DESTINATION include
+        FILES_MATCHING PATTERN "*.h"
+        PATTERN ".svn" EXCLUDE)
 
-catkin_add_gtest(${PROJECT_NAME}-test_time test/time.cpp)
-if(TARGET ${PROJECT_NAME}-test_time)
-  target_link_libraries(${PROJECT_NAME}-test_time ${catkin_LIBRARIES} rostime)
-endif()
+catkin_project(rostime
+  INCLUDE_DIRS include
+  LIBRARIES rostime
+  )
