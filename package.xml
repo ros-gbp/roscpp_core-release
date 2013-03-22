@@ -1,6 +1,6 @@
 <package>
   <name>cpp_common</name>
-  <version>0.3.12</version>
+  <version>0.3.14</version>
   <description>
     cpp_common contains C++ code for doing things that are not necessarily ROS
     related, but are useful for multiple packages. This includes things like
@@ -9,7 +9,7 @@
 
     This package is a component of <a href="http://www.ros.org/wiki/roscpp">roscpp</a>.
   </description>
-  <maintainer email="dthomas@willowgarage.com">Dirk Thomas</maintainer>
+  <maintainer email="dthomas@osrfoundation.org">Dirk Thomas</maintainer>
   <license>BSD</license>
 
   <url>http://www.ros.org/wiki/cpp_common</url>
