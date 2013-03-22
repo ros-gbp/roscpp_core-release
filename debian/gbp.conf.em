@@ -1,3 +1,3 @@
 [git-buildpackage]
-upstream-branch=release/rostime/0.3.12
+upstream-branch=@(release_tag)
 upstream-tree=branch
