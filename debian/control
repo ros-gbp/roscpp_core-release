@@ -1,0 +1,12 @@
+Source: ros-hydro-roscpp-core
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 7.0.50~), ros-hydro-catkin
+Homepage: http://www.ros.org/wiki/roscpp_core
+Standards-Version: 3.9.2
+
+Package: ros-hydro-roscpp-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-hydro-cpp-common, ros-hydro-roscpp-serialization, ros-hydro-roscpp-traits, ros-hydro-rostime
+Description: Underlying data libraries for roscpp messages.
