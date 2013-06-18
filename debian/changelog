@@ -1,0 +1,32 @@
+ros-hydro-roscpp-serialization (0.3.15-1raring) raring; urgency=high
+
+  * fix compiler warning about unused variable (#11 <https://github.com/ros/roscpp_core/issues/11>)
+  * fix install destination for dll's under Windows
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 06 Jun 2013 07:00:00 -0000
+
+ros-hydro-roscpp-serialization (0.3.14-1raring) raring; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 21 Mar 2013 07:00:00 -0000
+
+ros-hydro-roscpp-serialization (0.3.13-1raring) raring; urgency=high
+
+  * fix serialization on ARM
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 08 Mar 2013 08:00:00 -0000
+
+ros-hydro-roscpp-serialization (0.3.12-1raring) raring; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sun, 13 Jan 2013 08:00:00 -0000
+
+ros-hydro-roscpp-serialization (0.3.11-1raring) raring; urgency=high
+
+  * first public release for Groovy
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 21 Dec 2012 08:00:00 -0000
+
+
