@@ -23,15 +23,17 @@ if(NOT APPLE)
 endif()
 
 install(TARGETS rostime
-  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION})
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION})
 
 install(DIRECTORY include/
   DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}
   FILES_MATCHING PATTERN "*.h")
 
-catkin_add_gtest(${PROJECT_NAME}-test_time test/time.cpp)
-if(TARGET ${PROJECT_NAME}-test_time)
-  target_link_libraries(${PROJECT_NAME}-test_time ${catkin_LIBRARIES} rostime)
+if(CATKIN_ENABLE_TESTING)
+  catkin_add_gtest(${PROJECT_NAME}-test_time test/time.cpp)
+  if(TARGET ${PROJECT_NAME}-test_time)
+    target_link_libraries(${PROJECT_NAME}-test_time ${catkin_LIBRARIES} rostime)
+  endif()
 endif()
