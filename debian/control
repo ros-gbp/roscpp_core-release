@@ -1,0 +1,12 @@
+Source: ros-hydro-rostime
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 7.0.50~), libboost-all-dev, ros-hydro-catkin (>= 0.5.68), ros-hydro-cpp-common
+Homepage: http://ros.org/wiki/rostime
+Standards-Version: 3.9.2
+
+Package: ros-hydro-rostime
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, ros-hydro-cpp-common
+Description: Time and Duration implementations for C++ libraries, including roscpp.
