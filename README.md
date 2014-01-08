@@ -1,3 +1,27 @@
+## roscpp_core - 0.3.17-0
+
+User `dthomas@drudge` released the packages in the `roscpp_core` repository by running `/usr/bin/bloom-release -t hydro -r hydro roscpp_core` on `Wed, 08 Jan 2014 06:22:09 -0000`
+
+These packages were released:
+- `cpp_common`
+- `roscpp_core`
+- `roscpp_serialization`
+- `roscpp_traits`
+- `rostime`
+
+Version of package(s) in repository `roscpp_core`:
+- rosdistro version: `0.3.16-0`
+- old version: `0.3.16-0`
+- new version: `0.3.17-0`
+
+Versions of tools used:
+- bloom version: `0.4.4`
+- catkin_pkg version: `0.1.24`
+- rosdep version: `0.10.24`
+- rosdistro version: `0.2.20`
+- vcstools version: `0.1.33`
+
+
 ## roscpp_core - 0.3.16-0
 
 User `dthomas@drudge` released the packages in the `roscpp_core` repository by running `/usr/bin/bloom-release --track hydro --ros-distro hydro roscpp_core` on `Sun, 14 Jul 2013 08:15:21 -0000`
