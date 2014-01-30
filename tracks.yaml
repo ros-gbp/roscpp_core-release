@@ -49,7 +49,7 @@ tracks:
     - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
       -i :{release_inc}
     devel_branch: indigo-devel
-    last_version: null
+    last_version: 0.4.0
     name: roscpp_core
     patches: null
     release_inc: '0'
