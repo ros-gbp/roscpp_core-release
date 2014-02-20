@@ -2,6 +2,9 @@
 Changelog for package roscpp_traits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.0 (2014-02-19)
+------------------
+
 0.4.2 (2014-02-11)
 ------------------
 * Revert "remove MessageEvent constructors from Message" (revert changes from 0.4.1)
