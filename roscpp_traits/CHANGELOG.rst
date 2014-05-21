@@ -2,8 +2,20 @@
 Changelog for package roscpp_traits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.0 (2014-02-19)
+------------------
+
+0.4.2 (2014-02-11)
+------------------
+* Revert "remove MessageEvent constructors from Message" (revert changes from 0.4.1)
+
+0.4.1 (2014-02-11)
+------------------
+* remove MessageEvent constructors from Message (`#21 <https://github.com/ros/roscpp_core/issues/21>`_)
+
+0.4.0 (2014-01-29)
+------------------
+* ros::MessageEvent no longer reads __connection_header from ROS message (`#19 <https://github.com/ros/roscpp_core/issues/19>`_)
 
 0.3.17 (2014-01-07)
 -------------------
