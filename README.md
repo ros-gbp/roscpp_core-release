@@ -1,3 +1,27 @@
+## roscpp_core (indigo) - 0.5.4-0
+
+The packages in the `roscpp_core` repository were released into the `indigo` distro by running `/usr/bin/bloom-release -r indigo -t indigo roscpp_core` on `Wed, 23 Jul 2014 21:54:22 -0000`
+
+These packages were released:
+- `cpp_common`
+- `roscpp_core`
+- `roscpp_serialization`
+- `roscpp_traits`
+- `rostime`
+
+Version of package(s) in repository `roscpp_core`:
+- rosdistro version: `0.5.3-0`
+- old version: `0.5.3-0`
+- new version: `0.5.4-0`
+
+Versions of tools used:
+- bloom version: `0.5.10`
+- catkin_pkg version: `0.2.4`
+- rosdep version: `0.10.28`
+- rosdistro version: `0.3.5`
+- vcstools version: `0.1.35`
+
+
 ## roscpp_core (indigo) - 0.5.3-0
 
 The packages in the `roscpp_core` repository were released into the `indigo` distro by running `/usr/bin/bloom-release -r indigo -t indigo roscpp_core` on `Sun, 29 Jun 2014 01:18:23 -0000`
