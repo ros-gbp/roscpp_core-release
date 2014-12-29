@@ -1,3 +1,29 @@
+## roscpp_core (hydro) - 0.4.4-0
+
+The packages in the `roscpp_core` repository were released into the `hydro` distro by running `/usr/bin/bloom-release -r hydro -t hydro roscpp_core` on `Mon, 29 Dec 2014 18:48:36 -0000`
+
+These packages were released:
+- `cpp_common`
+- `roscpp_core`
+- `roscpp_serialization`
+- `roscpp_traits`
+- `rostime`
+
+Version of package(s) in repository `roscpp_core`:
+- upstream repository: git@github.com:ros/roscpp_core.git
+- release repository: https://github.com/ros-gbp/roscpp_core-release.git
+- rosdistro version: `0.4.3-0`
+- old version: `0.4.3-0`
+- new version: `0.4.4-0`
+
+Versions of tools used:
+- bloom version: `0.5.16`
+- catkin_pkg version: `0.2.6`
+- rosdep version: `0.11.0`
+- rosdistro version: `0.4.0`
+- vcstools version: `0.1.36`
+
+
 ## roscpp_core (jade) - 0.5.5-0
 
 The packages in the `roscpp_core` repository were released into the `jade` distro by running `/usr/bin/bloom-release -r jade -t jade roscpp_core` on `Wed, 24 Dec 2014 00:34:04 -0000`
