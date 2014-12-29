@@ -29,7 +29,7 @@ tracks:
     - git-bloom-generate -y rosdebian --prefix release/:{ros_distro} :{ros_distro}
       -i :{release_inc}
     devel_branch: hydro-devel
-    last_version: 0.4.3
+    last_version: 0.4.4
     name: roscpp_core
     patches: null
     release_inc: '0'
