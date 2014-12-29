@@ -47,7 +47,7 @@ Rate::Rate(double frequency)
 
 Rate::Rate(const Duration& d)
   : start_(Time::now())
-  , expected_cycle_time_(d.sec, d.nsec)
+  , expected_cycle_time_(1.0 / d.toSec())
   , actual_cycle_time_(0.0)
 { }
 

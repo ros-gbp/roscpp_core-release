@@ -1,11 +1,9 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(cpp_common)
-
-find_package(Boost REQUIRED COMPONENTS system thread)
-find_package(console_bridge REQUIRED)
+find_package(console_bridge)
 find_package(catkin REQUIRED)
 catkin_package(
-  DEPENDS Boost console_bridge
+  DEPENDS console_bridge
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME})
 
@@ -13,7 +11,7 @@ include(CheckIncludeFile)
 include(CheckFunctionExists)
 include(CheckCXXSourceCompiles)
 
-include_directories(include ${Boost_INCLUDE_DIRS} ${console_bridge_INCLUDE_DIRS})
+include_directories(include ${console_bridge_INCLUDE_DIRS})
 
 # execinfo.h is needed for backtrace on glibc systems
 CHECK_INCLUDE_FILE(execinfo.h HAVE_EXECINFO_H)
@@ -32,7 +30,7 @@ if(HAVE_GLIBC_BACKTRACE)
 endif(HAVE_GLIBC_BACKTRACE)
 
 add_library(${PROJECT_NAME} src/debug.cpp src/header.cpp)
-target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES} ${console_bridge_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${console_bridge_LIBRARIES})
 
 install(TARGETS ${PROJECT_NAME}
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
