@@ -1,0 +1,104 @@
+ros-indigo-roscpp-serialization (0.5.6-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 20 May 2015 07:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.5.5-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Mon, 22 Dec 2014 08:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.5.4-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 23 Jul 2014 07:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.5.3-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sat, 28 Jun 2014 07:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.5.2-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 27 Jun 2014 07:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.5.1-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 24 Jun 2014 07:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.5.0-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 19 Feb 2014 08:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.4.2-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 11 Feb 2014 08:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.4.1-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 11 Feb 2014 08:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.4.0-0trusty) trusty; urgency=high
+
+  * remove assignSubscriptionConnectionHeader (#19 <https://github.com/ros/roscpp_core/issues/19>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 29 Jan 2014 08:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.3.17-0trusty) trusty; urgency=high
+
+  * move several client library independent parts from ros_comm into roscpp_core (#12 <https://github.com/ros/roscpp_core/issues/12>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 07 Jan 2014 08:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.3.16-0trusty) trusty; urgency=high
+
+  * fix alignment in serialization on ARM (#14 <https://github.com/ros/roscpp_core/issues/14>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sun, 14 Jul 2013 07:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.3.15-0trusty) trusty; urgency=high
+
+  * fix compiler warning about unused variable (#11 <https://github.com/ros/roscpp_core/issues/11>)
+  * fix install destination for dll's under Windows
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 06 Jun 2013 07:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.3.14-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 21 Mar 2013 07:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.3.13-0trusty) trusty; urgency=high
+
+  * fix serialization on ARM
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 08 Mar 2013 08:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.3.12-0trusty) trusty; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sun, 13 Jan 2013 08:00:00 -0000
+
+ros-indigo-roscpp-serialization (0.3.11-0trusty) trusty; urgency=high
+
+  * first public release for Groovy
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 21 Dec 2012 08:00:00 -0000
+
+
