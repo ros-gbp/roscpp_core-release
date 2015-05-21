@@ -1,0 +1,12 @@
+Source: ros-indigo-roscpp-core
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-indigo-catkin
+Homepage: http://www.ros.org/wiki/roscpp_core
+Standards-Version: 3.9.2
+
+Package: ros-indigo-roscpp-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-indigo-cpp-common, ros-indigo-roscpp-serialization, ros-indigo-roscpp-traits, ros-indigo-rostime
+Description: Underlying data libraries for roscpp messages.
