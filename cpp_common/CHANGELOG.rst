@@ -2,7 +2,37 @@
 Changelog for package cpp_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.4.4 (2014-12-29)
+0.5.6 (2015-05-20)
+------------------
+
+0.5.5 (2014-12-22)
+------------------
+
+0.5.4 (2014-07-23)
+------------------
+
+0.5.3 (2014-06-28)
+------------------
+* add missing boost dependency (`#24 <https://github.com/ros/roscpp_core/issues/24>`_)
+
+0.5.2 (2014-06-27)
+------------------
+* find_package console_bridge with REQUIRED (`#23 <https://github.com/ros/roscpp_core/issues/23>`_)
+
+0.5.1 (2014-06-24)
+------------------
+* convert to use console bridge from upstream debian package (`ros/rosdistro#4633 <https://github.com/ros/rosdistro/issues/4633>`_)
+
+0.5.0 (2014-02-19)
+------------------
+
+0.4.2 (2014-02-11)
+------------------
+
+0.4.1 (2014-02-11)
+------------------
+
+0.4.0 (2014-01-29)
 ------------------
 
 0.3.17 (2014-01-07)
