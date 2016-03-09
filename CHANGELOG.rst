@@ -2,6 +2,11 @@
 Changelog for package rostime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.5.7 (2016-03-09)
+------------------
+* Adjust return value of sleep() function (`#45 <https://github.com/ros/roscpp_core/pull/45>`_)
+* fix WallRate(Duration) constructor (`#40 <https://github.com/ros/roscpp_core/pull/40>`_)
+
 0.5.6 (2015-05-20)
 ------------------
 
