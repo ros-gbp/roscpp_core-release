@@ -1,3 +1,31 @@
+## roscpp_core (jade) - 0.5.7-0
+
+The packages in the `roscpp_core` repository were released into the `jade` distro by running `/usr/bin/bloom-release -r jade -t jade roscpp_core` on `Wed, 09 Mar 2016 19:04:40 -0000`
+
+These packages were released:
+- `cpp_common`
+- `roscpp_core`
+- `roscpp_serialization`
+- `roscpp_traits`
+- `rostime`
+
+Version of package(s) in repository `roscpp_core`:
+
+- upstream repository: git@github.com:ros/roscpp_core.git
+- release repository: https://github.com/ros-gbp/roscpp_core-release.git
+- rosdistro version: `0.5.6-0`
+- old version: `0.5.6-0`
+- new version: `0.5.7-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.21`
+- catkin_pkg version: `0.2.10`
+- rosdep version: `0.11.4`
+- rosdistro version: `0.4.4`
+- vcstools version: `0.1.38`
+
+
 ## roscpp_core (kinetic) - 0.5.7-0
 
 The packages in the `roscpp_core` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic roscpp_core` on `Wed, 09 Mar 2016 18:59:22 -0000`
