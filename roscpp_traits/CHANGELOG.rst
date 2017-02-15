@@ -2,6 +2,11 @@
 Changelog for package roscpp_traits
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.2 (2017-02-14)
+------------------
+* fix warning when compiling with -Wpedantic (`#53 <https://github.com/ros/roscpp_core/issues/53>`_)
+* fix warning about unused parameters (`#52 <https://github.com/ros/roscpp_core/issues/52>`_)
+
 0.6.1 (2016-09-02)
 ------------------
 
