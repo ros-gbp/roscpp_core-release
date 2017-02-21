@@ -1,3 +1,31 @@
+## roscpp_core (lunar) - 0.6.2-0
+
+The packages in the `roscpp_core` repository were released into the `lunar` distro by running `/usr/bin/bloom-release -r lunar -t lunar roscpp_core` on `Tue, 21 Feb 2017 19:34:25 -0000`
+
+These packages were released:
+- `cpp_common`
+- `roscpp_core`
+- `roscpp_serialization`
+- `roscpp_traits`
+- `rostime`
+
+Version of package(s) in repository `roscpp_core`:
+
+- upstream repository: git@github.com:ros/roscpp_core.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `None-0`
+- new version: `0.6.2-0`
+
+Versions of tools used:
+
+- bloom version: `0.5.23`
+- catkin_pkg version: `0.3.1`
+- rosdep version: `0.11.5`
+- rosdistro version: `0.5.0`
+- vcstools version: `0.1.39`
+
+
 ## roscpp_core (kinetic) - 0.6.2-0
 
 The packages in the `roscpp_core` repository were released into the `kinetic` distro by running `/usr/bin/bloom-release -r kinetic -t kinetic roscpp_core` on `Wed, 15 Feb 2017 00:40:59 -0000`
