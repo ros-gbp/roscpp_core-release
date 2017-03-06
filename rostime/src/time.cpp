@@ -404,11 +404,9 @@ namespace ros
             end = TIME_MAX;
           }
 
-        bool rc = false;
         while (!g_stopped && (Time::now() < end))
           {
             ros_wallsleep(0, 1000000);
-            rc = true;
 
             // If we started at time 0 wait for the first actual time to arrive before starting the timer on
             // our sleep
@@ -425,7 +423,7 @@ namespace ros
               }
           }
 
-        return rc && !g_stopped;
+        return true;
       }
   }
 

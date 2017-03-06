@@ -120,7 +120,6 @@ public:
   explicit Duration(const Rate&);
   /**
    * \brief sleep for the amount of time specified by this Duration.  If a signal interrupts the sleep, resleeps for the time remaining.
-   * @return True if the desired sleep duration was met, false otherwise.
    */
   bool sleep() const;
 };
@@ -148,7 +147,6 @@ public:
   explicit WallDuration(const Rate&);
   /**
    * \brief sleep for the amount of time specified by this Duration.  If a signal interrupts the sleep, resleeps for the time remaining.
-   * @return True if the desired sleep duration was met, false otherwise.
    */
   bool sleep() const;
 };

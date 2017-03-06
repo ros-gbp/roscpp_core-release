@@ -2,15 +2,7 @@
 Changelog for package roscpp_serialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.6.2 (2017-02-14)
-------------------
-* fix warning when compiling with -Wpedantic (`#53 <https://github.com/ros/roscpp_core/issues/53>`_)
-
-0.6.1 (2016-09-02)
-------------------
-* fix warning about unused parameter (`#51 <https://github.com/ros/roscpp_core/pull/51>`_)
-
-0.6.0 (2016-03-17)
+0.5.8 (2017-03-06)
 ------------------
 
 0.5.7 (2016-03-09)

@@ -443,11 +443,10 @@ TEST(Duration, sleepWithSignal)
   alarm(1);
   Time start = Time::now();
   Duration d(2.0);
-  bool rc = d.sleep();
+  d.sleep();
   Time end = Time::now();
 
   ASSERT_GT(end - start, d);
-  ASSERT_TRUE(rc);
 }
 
 TEST(Rate, constructFromDuration){

@@ -193,7 +193,6 @@ namespace ros
     static Time now();
     /**
      * \brief Sleep until a specific time has been reached.
-     * @return True if the desired sleep time was met, false otherwise.
      */
     static bool sleepUntil(const Time& end);
 
@@ -249,7 +248,6 @@ namespace ros
 
     /**
      * \brief Sleep until a specific time has been reached.
-     * @return True if the desired sleep time was met, false otherwise.
      */
     static bool sleepUntil(const WallTime& end);
 
