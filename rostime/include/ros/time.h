@@ -193,6 +193,7 @@ namespace ros
     static Time now();
     /**
      * \brief Sleep until a specific time has been reached.
+     * @return True if the desired sleep time was met, false otherwise.
      */
     static bool sleepUntil(const Time& end);
 
@@ -248,14 +249,50 @@ namespace ros
 
     /**
      * \brief Sleep until a specific time has been reached.
+     * @return True if the desired sleep time was met, false otherwise.
      */
     static bool sleepUntil(const WallTime& end);
 
     static bool isSystemTime() { return true; }
   };
 
+  /**
+   * \brief Time representation.  Always steady-clock time.
+   *
+   * Not affected by ROS time.
+   *
+   * ros::TimeBase provides most of its functionality.
+   */
+  class ROSTIME_DECL SteadyTime : public TimeBase<SteadyTime, WallDuration>
+  {
+    public:
+      SteadyTime()
+        : TimeBase<SteadyTime, WallDuration>()
+      {}
+
+      SteadyTime(uint32_t _sec, uint32_t _nsec)
+        : TimeBase<SteadyTime, WallDuration>(_sec, _nsec)
+      {}
+
+      explicit SteadyTime(double t) { fromSec(t); }
+
+      /**
+       * \brief Returns the current steady (monotonic) clock time.
+       */
+      static SteadyTime now();
+
+      /**
+       * \brief Sleep until a specific time has been reached.
+       * @return True if the desired sleep time was met, false otherwise.
+       */
+      static bool sleepUntil(const SteadyTime& end);
+
+      static bool isSystemTime() { return true; }
+  };
+
   ROSTIME_DECL std::ostream &operator <<(std::ostream &os, const Time &rhs);
   ROSTIME_DECL std::ostream &operator <<(std::ostream &os, const WallTime &rhs);
+  ROSTIME_DECL std::ostream &operator <<(std::ostream &os, const SteadyTime &rhs);
 }
 
 #endif // ROS_TIME_H

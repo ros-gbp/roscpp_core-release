@@ -2,9 +2,20 @@
 Changelog for package rostime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.5.8 (2017-03-06)
+0.6.3 (2017-05-15)
+------------------
+* add SteadyTime (`#57 <https://github.com/ros/roscpp_core/issues/57>`_)
+
+0.6.2 (2017-02-14)
+------------------
+
+0.6.1 (2016-09-02)
 ------------------
 * fix rounding errors leading to invalid stored data in ros::TimeBase (`#48 <https://github.com/ros/roscpp_core/issues/48>`_)
+
+0.6.0 (2016-03-17)
+------------------
+* change Duration:sleep return semantic (`#47 <https://github.com/ros/roscpp_core/pull/47>`_)
 
 0.5.7 (2016-03-09)
 ------------------

@@ -443,10 +443,11 @@ TEST(Duration, sleepWithSignal)
   alarm(1);
   Time start = Time::now();
   Duration d(2.0);
-  d.sleep();
+  bool rc = d.sleep();
   Time end = Time::now();
 
   ASSERT_GT(end - start, d);
+  ASSERT_TRUE(rc);
 }
 
 TEST(Rate, constructFromDuration){
@@ -478,6 +479,30 @@ TEST(WallRate, constructFromDuration){
 // WallTime/WallDuration
 ///////////////////////////////////////////////////////////////////////////////////
 
+
+///////////////////////////////////////////////////////////////////////////////////
+// SteadyTime/WallDuration
+///////////////////////////////////////////////////////////////////////////////////
+
+TEST(SteadyTime, sleep){
+  SteadyTime start = SteadyTime::now();
+  WallDuration d(2.0);
+  bool rc = d.sleep();
+  SteadyTime end = SteadyTime::now();
+
+  ASSERT_GT(end - start, d);
+  ASSERT_TRUE(rc);
+}
+
+TEST(SteadyTime, sleepUntil){
+  SteadyTime start = SteadyTime::now();
+  SteadyTime end = start + WallDuration(2.0);
+  bool rc = SteadyTime::sleepUntil(end);
+  SteadyTime finished = SteadyTime::now();
+
+  ASSERT_GT(finished, end);
+  ASSERT_TRUE(rc);
+}
 
 int main(int argc, char **argv){
   testing::InitGoogleTest(&argc, argv);
