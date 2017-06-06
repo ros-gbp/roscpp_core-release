@@ -2,6 +2,10 @@
 Changelog for package rostime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.4 (2017-06-06)
+------------------
+* add logic to support steady time on macOS (regression of 0.6.3) (`#59 <https://github.com/ros/roscpp_core/pull/59>`_)
+
 0.6.3 (2017-05-15)
 ------------------
 * add SteadyTime (`#57 <https://github.com/ros/roscpp_core/issues/57>`_)
