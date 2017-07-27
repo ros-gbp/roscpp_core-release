@@ -1,0 +1,12 @@
+Source: ros-lunar-roscpp-core
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-lunar-catkin
+Homepage: http://www.ros.org/wiki/roscpp_core
+Standards-Version: 3.9.2
+
+Package: ros-lunar-roscpp-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lunar-cpp-common, ros-lunar-roscpp-serialization, ros-lunar-roscpp-traits, ros-lunar-rostime
+Description: Underlying data libraries for roscpp messages.
