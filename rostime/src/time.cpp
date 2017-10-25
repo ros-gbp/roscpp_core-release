@@ -46,10 +46,10 @@
 #include <limits>
 
 // time related includes for macOS
-#if defined(__MACH__)
+#if defined(__APPLE__)
 #include <mach/clock.h>
 #include <mach/mach.h>
-#endif  // defined(__MACH__)
+#endif  // defined(__APPLE__)
 
 #include <boost/thread/mutex.hpp>
 #include <boost/io/ios_state.hpp>
@@ -100,9 +100,6 @@ namespace ros
    * (i.e. not exposed to users of the time classes)
    */
   void ros_walltime(uint32_t& sec, uint32_t& nsec) 
-#ifndef WIN32    
-    throw(NoHighPerformanceTimersException)
-#endif
   {
 #ifndef WIN32
 #if HAS_CLOCK_GETTIME
@@ -182,13 +179,10 @@ namespace ros
   }
 
   void ros_steadytime(uint32_t& sec, uint32_t& nsec)
-#ifndef WIN32
-    throw(NoHighPerformanceTimersException)
-#endif
   {
 #ifndef WIN32
     timespec start;
-#if defined(__MACH__)
+#if defined(__APPLE__)
     // On macOS use clock_get_time.
     clock_serv_t cclock;
     mach_timespec_t mts;
@@ -197,10 +191,10 @@ namespace ros
     mach_port_deallocate(mach_task_self(), cclock);
     start.tv_sec = mts.tv_sec;
     start.tv_nsec = mts.tv_nsec;
-#else  // defined(__MACH__)
+#else  // defined(__APPLE__)
     // Otherwise use clock_gettime.
     clock_gettime(CLOCK_MONOTONIC, &start);
-#endif  // defined(__MACH__)
+#endif  // defined(__APPLE__)
     sec  = start.tv_sec;
     nsec = start.tv_nsec;
 #else
