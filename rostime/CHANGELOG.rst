@@ -2,6 +2,24 @@
 Changelog for package rostime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.6 (2017-10-25)
+------------------
+* only use Apple features on Apple (`#68 <https://github.com/ros/roscpp_core/issues/68>`_)
+* remove exception specification (`#64 <https://github.com/ros/roscpp_core/issues/64>`_)
+
+0.6.5 (2017-07-27)
+------------------
+* add additional checks for valid time values (`#62 <https://github.com/ros/roscpp_core/pull/62>`_)
+* fix overflow bugs in Time and Duration (`#61 <https://github.com/ros/roscpp_core/pull/61>`_, `#63 <https://github.com/ros/roscpp_core/pull/63>`_)
+
+0.6.4 (2017-06-06)
+------------------
+* add logic to support steady time on macOS (regression of 0.6.3) (`#59 <https://github.com/ros/roscpp_core/pull/59>`_)
+
+0.6.3 (2017-05-15)
+------------------
+* add SteadyTime (`#57 <https://github.com/ros/roscpp_core/issues/57>`_)
+
 0.6.2 (2017-02-14)
 ------------------
 
