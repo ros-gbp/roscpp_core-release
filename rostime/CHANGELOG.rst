@@ -2,6 +2,9 @@
 Changelog for package rostime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.7 (2017-11-03)
+------------------
+
 0.6.6 (2017-10-25)
 ------------------
 * only use Apple features on Apple (`#68 <https://github.com/ros/roscpp_core/issues/68>`_)
