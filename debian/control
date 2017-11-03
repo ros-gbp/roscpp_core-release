@@ -1,0 +1,12 @@
+Source: ros-kinetic-roscpp-core
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-kinetic-catkin
+Homepage: http://www.ros.org/wiki/roscpp_core
+Standards-Version: 3.9.2
+
+Package: ros-kinetic-roscpp-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-kinetic-cpp-common, ros-kinetic-roscpp-serialization, ros-kinetic-roscpp-traits, ros-kinetic-rostime
+Description: Underlying data libraries for roscpp messages.
