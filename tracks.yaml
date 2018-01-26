@@ -145,7 +145,7 @@ tracks:
     - git-bloom-generate -y rosrpm --prefix release/:{ros_distro} :{ros_distro} -i
       :{release_inc}
     devel_branch: kinetic-devel
-    last_version: null
+    last_version: 0.6.8
     name: roscpp_core
     patches: null
     release_inc: '0'
