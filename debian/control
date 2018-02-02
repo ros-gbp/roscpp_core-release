@@ -1,0 +1,13 @@
+Source: ros-melodic-roscpp-serialization
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-catkin, ros-melodic-cpp-common, ros-melodic-roscpp-traits, ros-melodic-rostime
+Homepage: http://ros.org/wiki/roscpp_serialization
+Standards-Version: 3.9.2
+
+Package: ros-melodic-roscpp-serialization
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-cpp-common, ros-melodic-roscpp-traits, ros-melodic-rostime
+Description: roscpp_serialization contains the code for serialization as described in MessagesSerializationAndAdaptingTypes.
+ This package is a component of roscpp.
