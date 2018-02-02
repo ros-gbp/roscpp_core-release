@@ -1,0 +1,13 @@
+Source: ros-lunar-roscpp-traits
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-lunar-catkin
+Homepage: http://ros.org/wiki/roscpp_traits
+Standards-Version: 3.9.2
+
+Package: ros-lunar-roscpp-traits
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-lunar-cpp-common, ros-lunar-rostime
+Description: roscpp_traits contains the message traits code as described in MessagesTraits.
+ This package is a component of roscpp.
