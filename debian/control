@@ -1,0 +1,12 @@
+Source: ros-melodic-roscpp-core
+Section: misc
+Priority: extra
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-melodic-catkin
+Homepage: http://www.ros.org/wiki/roscpp_core
+Standards-Version: 3.9.2
+
+Package: ros-melodic-roscpp-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-melodic-cpp-common, ros-melodic-roscpp-serialization, ros-melodic-roscpp-traits, ros-melodic-rostime
+Description: Underlying data libraries for roscpp messages.
