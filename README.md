@@ -1,3 +1,31 @@
+## roscpp_core (melodic) - 0.6.13-1
+
+The packages in the `roscpp_core` repository were released into the `melodic` distro by running `/usr/bin/bloom-release -r melodic -t melodic roscpp_core` on `Thu, 03 Oct 2019 22:53:10 -0000`
+
+These packages were released:
+- `cpp_common`
+- `roscpp_core`
+- `roscpp_serialization`
+- `roscpp_traits`
+- `rostime`
+
+Version of package(s) in repository `roscpp_core`:
+
+- upstream repository: git@github.com:ros/roscpp_core.git
+- release repository: https://github.com/ros-gbp/roscpp_core-release.git
+- rosdistro version: `0.6.12-0`
+- old version: `0.6.12-0`
+- new version: `0.6.13-1`
+
+Versions of tools used:
+
+- bloom version: `0.8.0`
+- catkin_pkg version: `0.4.13`
+- rosdep version: `0.16.1`
+- rosdistro version: `0.7.4`
+- vcstools version: `0.1.42`
+
+
 ## roscpp_core (melodic) - 0.6.12-0
 
 The packages in the `roscpp_core` repository were released into the `melodic` distro by running `/usr/bin/bloom-release -r melodic -t melodic roscpp_core` on `Tue, 05 Mar 2019 00:09:26 -0000`
