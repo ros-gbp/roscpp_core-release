@@ -1,0 +1,195 @@
+ros-melodic-roscpp-serialization (0.6.13-1bionic) bionic; urgency=high
+
+  * added cast to uint32_t in roscpp_serialization to fix -Wconversion warning (#113 <https://github.com/ros/roscpp_core/issues/113>)
+  * roscpp_serialization: replace c-style-casts with static/reinterpret casts (#107 <https://github.com/ros/roscpp_core/issues/107>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 03 Oct 2019 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.12-1bionic) bionic; urgency=high
+
+  * fix GCC8 class-memaccess in VectorSerializer (#102 <https://github.com/ros/roscpp_core/issues/102>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Mon, 04 Mar 2019 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.11-1bionic) bionic; urgency=high
+
+  * replace reinterpret_cast with memcpy to avoid undefined behaviour/alignment issues (#83 <https://github.com/ros/roscpp_core/issues/83>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 06 Jun 2018 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.10-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 01 May 2018 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.9-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 02 Feb 2018 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.8-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 26 Jan 2018 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.7-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 03 Nov 2017 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.6-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 25 Oct 2017 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.5-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 27 Jul 2017 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.4-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 06 Jun 2017 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.3-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Mon, 15 May 2017 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.2-1bionic) bionic; urgency=high
+
+  * fix warning when compiling with -Wpedantic (#53 <https://github.com/ros/roscpp_core/issues/53>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 14 Feb 2017 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.1-1bionic) bionic; urgency=high
+
+  * fix warning about unused parameter (#51 <https://github.com/ros/roscpp_core/pull/51>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 02 Sep 2016 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.6.0-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 17 Mar 2016 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.5.7-1bionic) bionic; urgency=high
+
+  * fix serializer bool on ARM (#44 <https://github.com/ros/roscpp_core/pull/44>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 09 Mar 2016 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.5.6-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 20 May 2015 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.5.5-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Mon, 22 Dec 2014 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.5.4-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 23 Jul 2014 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.5.3-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sat, 28 Jun 2014 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.5.2-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 27 Jun 2014 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.5.1-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 24 Jun 2014 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.5.0-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 19 Feb 2014 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.4.2-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 11 Feb 2014 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.4.1-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 11 Feb 2014 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.4.0-1bionic) bionic; urgency=high
+
+  * remove assignSubscriptionConnectionHeader (#19 <https://github.com/ros/roscpp_core/issues/19>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 29 Jan 2014 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.3.17-1bionic) bionic; urgency=high
+
+  * move several client library independent parts from ros_comm into roscpp_core (#12 <https://github.com/ros/roscpp_core/issues/12>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 07 Jan 2014 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.3.16-1bionic) bionic; urgency=high
+
+  * fix alignment in serialization on ARM (#14 <https://github.com/ros/roscpp_core/issues/14>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sun, 14 Jul 2013 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.3.15-1bionic) bionic; urgency=high
+
+  * fix compiler warning about unused variable (#11 <https://github.com/ros/roscpp_core/issues/11>)
+  * fix install destination for dll's under Windows
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 06 Jun 2013 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.3.14-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 21 Mar 2013 07:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.3.13-1bionic) bionic; urgency=high
+
+  * fix serialization on ARM
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 08 Mar 2013 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.3.12-1bionic) bionic; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sun, 13 Jan 2013 08:00:00 -0000
+
+ros-melodic-roscpp-serialization (0.3.11-1bionic) bionic; urgency=high
+
+  * first public release for Groovy
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 21 Dec 2012 08:00:00 -0000
+
+
