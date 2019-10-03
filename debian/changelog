@@ -1,0 +1,195 @@
+ros-melodic-cpp-common (0.6.13-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 03 Oct 2019 07:00:00 -0000
+
+ros-melodic-cpp-common (0.6.12-1stretch) stretch; urgency=high
+
+  * update the use of macros in platform.h (#99 <https://github.com/ros/roscpp_core/issues/99>)
+  * avoid unnecessary memory allocation (std::string) (#95 <https://github.com/ros/roscpp_core/issues/95>)
+  * fix bug in HAVE_CXXABI_H compiler check (#89 <https://github.com/ros/roscpp_core/issues/89>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Mon, 04 Mar 2019 08:00:00 -0000
+
+ros-melodic-cpp-common (0.6.11-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 06 Jun 2018 07:00:00 -0000
+
+ros-melodic-cpp-common (0.6.10-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 01 May 2018 07:00:00 -0000
+
+ros-melodic-cpp-common (0.6.9-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 02 Feb 2018 08:00:00 -0000
+
+ros-melodic-cpp-common (0.6.8-1stretch) stretch; urgency=high
+
+  * define console_bridge macro with API call rather than relying on short macro being defined (#71 <https://github.com/ros/roscpp_core/issues/71>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 26 Jan 2018 08:00:00 -0000
+
+ros-melodic-cpp-common (0.6.7-1stretch) stretch; urgency=high
+
+  * fix support for console_bridge < 0.3.0 (#70 <https://github.com/ros/roscpp_core/issues/70>, regression of 0.6.6)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 03 Nov 2017 07:00:00 -0000
+
+ros-melodic-cpp-common (0.6.6-1stretch) stretch; urgency=high
+
+  * replace usage of deprecated logError macros (#69 <https://github.com/ros/roscpp_core/issues/69>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 25 Oct 2017 07:00:00 -0000
+
+ros-melodic-cpp-common (0.6.5-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 27 Jul 2017 07:00:00 -0000
+
+ros-melodic-cpp-common (0.6.4-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 06 Jun 2017 07:00:00 -0000
+
+ros-melodic-cpp-common (0.6.3-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Mon, 15 May 2017 07:00:00 -0000
+
+ros-melodic-cpp-common (0.6.2-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 14 Feb 2017 08:00:00 -0000
+
+ros-melodic-cpp-common (0.6.1-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 02 Sep 2016 07:00:00 -0000
+
+ros-melodic-cpp-common (0.6.0-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 17 Mar 2016 07:00:00 -0000
+
+ros-melodic-cpp-common (0.5.7-1stretch) stretch; urgency=high
+
+  * export symbols for Header (#46 <https://github.com/ros/roscpp_core/pull/46>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 09 Mar 2016 08:00:00 -0000
+
+ros-melodic-cpp-common (0.5.6-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 20 May 2015 07:00:00 -0000
+
+ros-melodic-cpp-common (0.5.5-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Mon, 22 Dec 2014 08:00:00 -0000
+
+ros-melodic-cpp-common (0.5.4-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 23 Jul 2014 07:00:00 -0000
+
+ros-melodic-cpp-common (0.5.3-1stretch) stretch; urgency=high
+
+  * add missing boost dependency (#24 <https://github.com/ros/roscpp_core/issues/24>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sat, 28 Jun 2014 07:00:00 -0000
+
+ros-melodic-cpp-common (0.5.2-1stretch) stretch; urgency=high
+
+  * find_package console_bridge with REQUIRED (#23 <https://github.com/ros/roscpp_core/issues/23>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 27 Jun 2014 07:00:00 -0000
+
+ros-melodic-cpp-common (0.5.1-1stretch) stretch; urgency=high
+
+  * convert to use console bridge from upstream debian package (ros/rosdistro#4633 <https://github.com/ros/rosdistro/issues/4633>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 24 Jun 2014 07:00:00 -0000
+
+ros-melodic-cpp-common (0.5.0-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 19 Feb 2014 08:00:00 -0000
+
+ros-melodic-cpp-common (0.4.2-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 11 Feb 2014 08:00:00 -0000
+
+ros-melodic-cpp-common (0.4.1-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 11 Feb 2014 08:00:00 -0000
+
+ros-melodic-cpp-common (0.4.0-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Wed, 29 Jan 2014 08:00:00 -0000
+
+ros-melodic-cpp-common (0.3.17-1stretch) stretch; urgency=high
+
+  * move several client library independent parts from ros_comm into roscpp_core (#12 <https://github.com/ros/roscpp_core/issues/12>)
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Tue, 07 Jan 2014 08:00:00 -0000
+
+ros-melodic-cpp-common (0.3.16-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sun, 14 Jul 2013 07:00:00 -0000
+
+ros-melodic-cpp-common (0.3.15-1stretch) stretch; urgency=high
+
+  * fix install destination for dll's under Windows
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 06 Jun 2013 07:00:00 -0000
+
+ros-melodic-cpp-common (0.3.14-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Thu, 21 Mar 2013 07:00:00 -0000
+
+ros-melodic-cpp-common (0.3.13-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 08 Mar 2013 08:00:00 -0000
+
+ros-melodic-cpp-common (0.3.12-1stretch) stretch; urgency=high
+
+
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Sun, 13 Jan 2013 08:00:00 -0000
+
+ros-melodic-cpp-common (0.3.11-1stretch) stretch; urgency=high
+
+  * first public release for Groovy
+
+ -- Dirk Thomas <dthomas@osrfoundation.org>  Fri, 21 Dec 2012 08:00:00 -0000
+
+
