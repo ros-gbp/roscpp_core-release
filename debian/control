@@ -1,0 +1,12 @@
+Source: ros-noetic-roscpp-core
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin
+Homepage: http://www.ros.org/wiki/roscpp_core
+Standards-Version: 3.9.2
+
+Package: ros-noetic-roscpp-core
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-cpp-common, ros-noetic-roscpp-serialization, ros-noetic-roscpp-traits, ros-noetic-rostime
+Description: Underlying data libraries for roscpp messages.
