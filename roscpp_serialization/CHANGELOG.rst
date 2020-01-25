@@ -2,6 +2,9 @@
 Changelog for package roscpp_serialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.7.1 (2020-01-25)
+------------------
+
 0.7.0 (2020-01-24)
 ------------------
 * various code cleanup (`#116 <https://github.com/ros/roscpp_core/issues/116>`_)
