@@ -1,6 +1,6 @@
 <package>
   <name>cpp_common</name>
-  <version>0.7.0</version>
+  <version>0.7.1</version>
   <description>
     cpp_common contains C++ code for doing things that are not necessarily ROS
     related, but are useful for multiple packages. This includes things like
@@ -17,9 +17,11 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>boost</build_depend>
+  <build_depend>libboost-system-dev</build_depend>
+  <build_depend>libboost-thread-dev</build_depend>
   <build_depend>libconsole-bridge-dev</build_depend>
 
-  <run_depend>boost</run_depend>
+  <run_depend>libboost-system-dev</run_depend>
+  <run_depend>libboost-thread-dev</run_depend>
   <run_depend>libconsole-bridge-dev</run_depend>
 </package>
