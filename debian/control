@@ -1,0 +1,12 @@
+Source: ros-noetic-rostime
+Section: misc
+Priority: optional
+Maintainer: Dirk Thomas <dthomas@osrfoundation.org>
+Build-Depends: debhelper (>= 9.0.0), libboost-all-dev, ros-noetic-catkin (>= 0.5.68), ros-noetic-cpp-common
+Homepage: http://ros.org/wiki/rostime
+Standards-Version: 3.9.2
+
+Package: ros-noetic-rostime
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libboost-all-dev, ros-noetic-cpp-common
+Description: Time and Duration implementations for C++ libraries, including roscpp.
