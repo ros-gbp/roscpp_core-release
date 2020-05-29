@@ -1,3 +1,31 @@
+## roscpp_core (noetic) - 0.7.2-1
+
+The packages in the `roscpp_core` repository were released into the `noetic` distro by running `/usr/bin/bloom-release -r noetic -t noetic roscpp_core` on `Fri, 29 May 2020 04:53:09 -0000`
+
+These packages were released:
+- `cpp_common`
+- `roscpp_core`
+- `roscpp_serialization`
+- `roscpp_traits`
+- `rostime`
+
+Version of package(s) in repository `roscpp_core`:
+
+- upstream repository: git@github.com:ros/roscpp_core.git
+- release repository: https://github.com/ros-gbp/roscpp_core-release.git
+- rosdistro version: `0.7.1-1`
+- old version: `0.7.1-1`
+- new version: `0.7.2-1`
+
+Versions of tools used:
+
+- bloom version: `0.9.7`
+- catkin_pkg version: `0.4.20`
+- rosdep version: `0.19.0`
+- rosdistro version: `0.8.2`
+- vcstools version: `0.1.42`
+
+
 ## roscpp_core (noetic) - 0.7.1-1
 
 The packages in the `roscpp_core` repository were released into the `noetic` distro by running `/usr/bin/bloom-release -r noetic -t noetic roscpp_core` on `Sat, 25 Jan 2020 22:33:42 -0000`
