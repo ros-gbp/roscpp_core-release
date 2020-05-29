@@ -1,1 +1,1 @@
-{"trim": "", "base": "2e177487", "trimbase": "", "parent": "debian/noetic/roscpp_serialization", "previous": "233c2a2b"}
+{"base": "cac5ac82", "parent": "debian/noetic/roscpp_serialization", "previous": "c3ccd064", "trim": "", "trimbase": ""}
