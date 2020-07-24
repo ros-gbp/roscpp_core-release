@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.0.2)
 project(rostime)
 
 find_package(catkin REQUIRED COMPONENTS cpp_common)
@@ -12,7 +12,7 @@ catkin_package(
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${Boost_INCLUDE_DIRS})
 
-add_library(rostime 
+add_library(rostime
   src/duration.cpp
   src/rate.cpp
   src/time.cpp)
