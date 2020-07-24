@@ -2,14 +2,8 @@
 Changelog for package roscpp_serialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.7.2 (2020-05-28)
-------------------
-
-0.7.1 (2020-01-25)
-------------------
-
-0.7.0 (2020-01-24)
-------------------
+0.6.14 (2020-07-24)
+-------------------
 * various code cleanup (`#116 <https://github.com/ros/roscpp_core/issues/116>`_)
 * Bump CMake version to avoid CMP0048 warning (`#115 <https://github.com/ros/roscpp_core/issues/115>`_)
 

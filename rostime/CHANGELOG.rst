@@ -2,17 +2,9 @@
 Changelog for package rostime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.7.2 (2020-05-28)
-------------------
+0.6.14 (2020-07-24)
+-------------------
 * [Windows] Using C++11 std::chrono for ros_walltime & ros_steadytime (`#121 <https://github.com/ros/roscpp_core/issues/121>`_)
-
-0.7.1 (2020-01-25)
-------------------
-* only depend on the boost components needed (`#117 <https://github.com/ros/roscpp_core/issues/117>`_)
-
-0.7.0 (2020-01-24)
-------------------
-* rostime: remove empty destructor of DurationBase (`#104 <https://github.com/ros/roscpp_core/issues/104>`_)
 * various code cleanup (`#116 <https://github.com/ros/roscpp_core/issues/116>`_)
 * Bump CMake version to avoid CMP0048 warning (`#115 <https://github.com/ros/roscpp_core/issues/115>`_)
 
