@@ -120,63 +120,13 @@ namespace ros
     nsec = timeofday.tv_usec * 1000;
 #endif
 #else
-    // Win32 implementation
-    // unless I've missed something obvious, the only way to get high-precision
-    // time on Windows is via the QueryPerformanceCounter() call. However,
-    // this is somewhat problematic in Windows XP on some processors, especially
-    // AMD, because the Windows implementation can freak out when the CPU clocks
-    // down to save power. Time can jump or even go backwards. Microsoft has
-    // fixed this bug for most systems now, but it can still show up if you have
-    // not installed the latest CPU drivers (an oxymoron). They fixed all these
-    // problems in Windows Vista, and this API is by far the most accurate that
-    // I know of in Windows, so I'll use it here despite all these caveats
-    static LARGE_INTEGER cpu_freq, init_cpu_time;
-    static uint32_t start_sec = 0;
-    static uint32_t start_nsec = 0;
-    if ( ( start_sec == 0 ) && ( start_nsec == 0 ) )
-      {
-        QueryPerformanceFrequency(&cpu_freq);
-        if (cpu_freq.QuadPart == 0) {
-          throw NoHighPerformanceTimersException();
-        }
-        QueryPerformanceCounter(&init_cpu_time);
-        // compute an offset from the Epoch using the lower-performance timer API
-        FILETIME ft;
-        GetSystemTimeAsFileTime(&ft);
-        LARGE_INTEGER start_li;
-        start_li.LowPart = ft.dwLowDateTime;
-        start_li.HighPart = ft.dwHighDateTime;
-        // why did they choose 1601 as the time zero, instead of 1970?
-        // there were no outstanding hard rock bands in 1601.
-#ifdef _MSC_VER
-    	start_li.QuadPart -= 116444736000000000Ui64;
-#else
-    	start_li.QuadPart -= 116444736000000000ULL;
-#endif
-        int64_t start_sec64 = start_li.QuadPart / 10000000;  // 100-ns units
-        if (start_sec64 < 0 || start_sec64 > std::numeric_limits<uint32_t>::max())
-          throw std::runtime_error("SystemTime is out of dual 32-bit range");
-        start_sec = (uint32_t)start_sec64;
-        start_nsec = (start_li.LowPart % 10000000) * 100;
-      }
-    LARGE_INTEGER cur_time;
-    QueryPerformanceCounter(&cur_time);
-    LARGE_INTEGER delta_cpu_time;
-    delta_cpu_time.QuadPart = cur_time.QuadPart - init_cpu_time.QuadPart;
-    // todo: how to handle cpu clock drift. not sure it's a big deal for us.
-    // also, think about clock wraparound. seems extremely unlikey, but possible
-    double d_delta_cpu_time = delta_cpu_time.QuadPart / (double) cpu_freq.QuadPart;
-    uint32_t delta_sec = (uint32_t) floor(d_delta_cpu_time);
-    uint32_t delta_nsec = (uint32_t) boost::math::round((d_delta_cpu_time-delta_sec) * 1e9);
+    uint64_t now_s = 0;
+    uint64_t now_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::system_clock::now().time_since_epoch()).count();
 
-    int64_t sec_sum  = (int64_t)start_sec  + (int64_t)delta_sec;
-    int64_t nsec_sum = (int64_t)start_nsec + (int64_t)delta_nsec;
+    normalizeSecNSec(now_s, now_ns);
 
-    // Throws an exception if we go out of 32-bit range
-    normalizeSecNSecUnsigned(sec_sum, nsec_sum);
-
-    sec = sec_sum;
-    nsec = nsec_sum;
+    sec = (uint32_t)now_s;
+    nsec = (uint32_t)now_ns;
 #endif
   }
 
@@ -200,26 +150,13 @@ namespace ros
     sec  = start.tv_sec;
     nsec = start.tv_nsec;
 #else
-    static LARGE_INTEGER cpu_frequency, performance_count;
-    // These should not ever fail since XP is already end of life:
-    // From https://msdn.microsoft.com/en-us/library/windows/desktop/ms644905(v=vs.85).aspx and
-    //      https://msdn.microsoft.com/en-us/library/windows/desktop/ms644904(v=vs.85).aspx:
-    // "On systems that run Windows XP or later, the function will always succeed and will
-    //  thus never return zero."
-    QueryPerformanceFrequency(&cpu_frequency);
-    if (cpu_frequency.QuadPart == 0) {
-      throw NoHighPerformanceTimersException();
-    }
-    QueryPerformanceCounter(&performance_count);
-    double steady_time = performance_count.QuadPart / (double) cpu_frequency.QuadPart;
-    int64_t steady_sec = floor(steady_time);
-    int64_t steady_nsec = boost::math::round((steady_time - steady_sec) * 1e9);
+    uint64_t now_s = 0;
+    uint64_t now_ns = std::chrono::duration_cast<std::chrono::nanoseconds>(std::chrono::steady_clock::now().time_since_epoch()).count();
 
-    // Throws an exception if we go out of 32-bit range
-    normalizeSecNSecUnsigned(steady_sec, steady_nsec);
+    normalizeSecNSec(now_s, now_ns);
 
-    sec = steady_sec;
-    nsec = steady_nsec;
+    sec = (uint32_t)now_s;
+    nsec = (uint32_t)now_ns;
 #endif
   }
 
@@ -335,27 +272,27 @@ namespace ros
   {
     ros::WallTime start = ros::WallTime::now();
     while (!isValid() && !g_stopped)
-      {
-        ros::WallDuration(0.01).sleep();
+    {
+      ros::WallDuration(0.01).sleep();
 
-        if (timeout > ros::WallDuration(0, 0) && (ros::WallTime::now() - start > timeout))
-          {
-            return false;
-          }
-      }
-
-    if (g_stopped)
+      if (timeout > ros::WallDuration(0, 0) && (ros::WallTime::now() - start > timeout))
       {
         return false;
       }
+    }
+
+    if (g_stopped)
+    {
+      return false;
+    }
 
     return true;
   }
 
   Time Time::fromBoost(const boost::posix_time::ptime& t)
   {
-   boost::posix_time::time_duration diff = t - boost::posix_time::from_time_t(0);
-   return Time::fromBoost(diff);
+    boost::posix_time::time_duration diff = t - boost::posix_time::from_time_t(0);
+    return Time::fromBoost(diff);
   }
 
   Time Time::fromBoost(const boost::posix_time::time_duration& d)
@@ -397,29 +334,29 @@ namespace ros
   bool Time::sleepUntil(const Time& end)
   {
     if (Time::useSystemTime())
+    {
+      Duration d(end - Time::now());
+      if (d > Duration(0))
       {
-        Duration d(end - Time::now());
-        if (d > Duration(0))
-          {
-            return d.sleep();
-          }
-
-        return true;
+        return d.sleep();
       }
+
+      return true;
+    }
     else
+    {
+      Time start = Time::now();
+      while (!g_stopped && (Time::now() < end))
       {
-        Time start = Time::now();
-        while (!g_stopped && (Time::now() < end))
-          {
-            ros_nanosleep(0,1000000);
-            if (Time::now() < start)
-              {
-                return false;
-              }
-          }
-
-        return true;
+        ros_nanosleep(0,1000000);
+        if (Time::now() < start)
+        {
+          return false;
+        }
       }
+
+      return true;
+    }
   }
 
   bool WallTime::sleepUntil(const WallTime& end)
@@ -447,41 +384,41 @@ namespace ros
   bool Duration::sleep() const
   {
     if (Time::useSystemTime())
-      {
-        return ros_wallsleep(sec, nsec);
-      }
+    {
+      return ros_wallsleep(sec, nsec);
+    }
     else
+    {
+      Time start = Time::now();
+      Time end = start + *this;
+      if (start.isZero())
       {
-        Time start = Time::now();
-        Time end = start + *this;
-        if (start.isZero())
-          {
-            end = TIME_MAX;
-          }
-
-        bool rc = false;
-        while (!g_stopped && (Time::now() < end))
-          {
-            ros_wallsleep(0, 1000000);
-            rc = true;
-
-            // If we started at time 0 wait for the first actual time to arrive before starting the timer on
-            // our sleep
-            if (start.isZero())
-              {
-                start = Time::now();
-                end = start + *this;
-              }
-
-            // If time jumped backwards from when we started sleeping, return immediately
-            if (Time::now() < start)
-              {
-                return false;
-              }
-          }
-
-        return rc && !g_stopped;
+        end = TIME_MAX;
       }
+
+      bool rc = false;
+      while (!g_stopped && (Time::now() < end))
+      {
+        ros_wallsleep(0, 1000000);
+        rc = true;
+
+        // If we started at time 0 wait for the first actual time to arrive before starting the timer on
+        // our sleep
+        if (start.isZero())
+        {
+          start = Time::now();
+          end = start + *this;
+        }
+
+        // If time jumped backwards from when we started sleeping, return immediately
+        if (Time::now() < start)
+        {
+          return false;
+        }
+      }
+
+      return rc && !g_stopped;
+    }
   }
 
   std::ostream &operator<<(std::ostream& os, const WallTime &rhs)
@@ -577,5 +514,3 @@ namespace ros
   template class TimeBase<WallTime, WallDuration>;
   template class TimeBase<SteadyTime, WallDuration>;
 }
-
-
