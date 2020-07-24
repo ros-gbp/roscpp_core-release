@@ -2,6 +2,11 @@
 Changelog for package cpp_common
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+0.6.14 (2020-07-24)
+-------------------
+* various code cleanup (`#116 <https://github.com/ros/roscpp_core/issues/116>`_)
+* Bump CMake version to avoid CMP0048 warning (`#115 <https://github.com/ros/roscpp_core/issues/115>`_)
+
 0.6.13 (2019-10-03)
 -------------------
 
