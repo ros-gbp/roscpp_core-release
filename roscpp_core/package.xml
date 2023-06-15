@@ -1,14 +1,15 @@
 <package>
   <name>roscpp_core</name>
-  <version>0.6.14</version>
+  <version>0.7.3</version>
   <description>
     Underlying data libraries for roscpp messages.
   </description>
-  <maintainer email="dthomas@osrfoundation.org">Dirk Thomas</maintainer>
+  <maintainer email="peckama2@fel.cvut.cz">Martin Pecka</maintainer>
   <license>BSD</license>
 
   <url type="website">http://www.ros.org/wiki/roscpp_core</url>
   <author>Josh Faust</author>
+  <author>Dirk Thomas</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 

@@ -2,8 +2,22 @@
 Changelog for package roscpp_serialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-0.6.14 (2020-07-24)
--------------------
+0.7.3 (2023-06-15)
+------------------
+* Documented the API misuse in serializeServiceResponse
+* Fixed wrong serialization of messages on ARM with GCC 9.3 and -O3 optimizations
+* Changed maintainer to Martin Pecka
+* Fix usage of deprecated std::allocator::rebind (`#124 <https://github.com/ros/roscpp_core/issues/124>`_)
+* Contributors: Martin Pecka, poggenhans
+
+0.7.2 (2020-05-28)
+------------------
+
+0.7.1 (2020-01-25)
+------------------
+
+0.7.0 (2020-01-24)
+------------------
 * various code cleanup (`#116 <https://github.com/ros/roscpp_core/issues/116>`_)
 * Bump CMake version to avoid CMP0048 warning (`#115 <https://github.com/ros/roscpp_core/issues/115>`_)
 
