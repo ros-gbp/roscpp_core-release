@@ -41,6 +41,7 @@
 
 #include <vector>
 #include <map>
+#include <memory>
 
 #include <boost/array.hpp>
 #include <boost/call_traits.hpp>
@@ -163,11 +164,18 @@ inline void deserialize(Stream& stream, T& t)
   Serializer<T>::read(stream, t);
 }
 
+// Circumvent bug https://github.com/ros/roscpp_core/issues/130 which manifests only on ARM GCC 9.3
+#if defined(__aarch64__) && __GNUC__ == 9 && __GNUC_MINOR__ == 3
+#define ROS_SERIALIZATION_GCC_9_3_DISABLE_VECTORIZE __attribute__((optimize("no-tree-vectorize")))
+#else
+#define ROS_SERIALIZATION_GCC_9_3_DISABLE_VECTORIZE
+#endif
+  
 /**
  * \brief Determine the serialized length of an object
  */
 template<typename T>
-inline uint32_t serializationLength(const T& t)
+inline uint32_t ROS_SERIALIZATION_GCC_9_3_DISABLE_VECTORIZE serializationLength(const T& t)
 {
   return Serializer<T>::serializedLength(t);
 }
@@ -332,7 +340,7 @@ struct VectorSerializer
 template<typename T, class ContainerAllocator>
 struct VectorSerializer<T, ContainerAllocator, typename boost::disable_if<mt::IsFixedSize<T> >::type >
 {
-  typedef std::vector<T, typename ContainerAllocator::template rebind<T>::other> VecType;
+  typedef std::vector<T, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<T>> VecType;
   typedef typename VecType::iterator IteratorType;
   typedef typename VecType::const_iterator ConstIteratorType;
 
@@ -382,7 +390,7 @@ struct VectorSerializer<T, ContainerAllocator, typename boost::disable_if<mt::Is
 template<typename T, class ContainerAllocator>
 struct VectorSerializer<T, ContainerAllocator, typename boost::enable_if<mt::IsSimple<T> >::type >
 {
-  typedef std::vector<T, typename ContainerAllocator::template rebind<T>::other> VecType;
+  typedef std::vector<T, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<T>> VecType;
   typedef typename VecType::iterator IteratorType;
   typedef typename VecType::const_iterator ConstIteratorType;
 
@@ -424,7 +432,7 @@ struct VectorSerializer<T, ContainerAllocator, typename boost::enable_if<mt::IsS
 template<typename T, class ContainerAllocator>
 struct VectorSerializer<T, ContainerAllocator, typename boost::enable_if<mpl::and_<mt::IsFixedSize<T>, mpl::not_<mt::IsSimple<T> > > >::type >
 {
-  typedef std::vector<T, typename ContainerAllocator::template rebind<T>::other> VecType;
+  typedef std::vector<T, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<T>> VecType;
   typedef typename VecType::iterator IteratorType;
   typedef typename VecType::const_iterator ConstIteratorType;
 
@@ -841,6 +849,10 @@ inline SerializedMessage serializeServiceResponse(bool ok, const M& message)
     m.num_bytes = len + 1;
     m.buf.reset(new uint8_t[m.num_bytes]);
 
+    // The intended use for failure is serializeServiceResponse<uint32_t>(false, 0);
+    // The 0 written here as a message is read as message length in the deserialization
+    // code in ServiceServerLink::onResponseOkAndLength(). Although this is a little
+    // misuse of the API, it works.
     OStream s(m.buf.get(), static_cast<uint32_t>(m.num_bytes));
     serialize(s, static_cast<uint8_t>(ok));
     serialize(s, message);
