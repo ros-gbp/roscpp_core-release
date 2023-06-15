@@ -27,6 +27,7 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <limits>
 #include <vector>
 
 #include <gtest/gtest.h>
@@ -298,7 +299,7 @@ TEST(Time, CastFromDoubleExceptions)
 {
   ros::Time::init();
 
-  Time t1, t2, t3;
+  Time t1, t2, t3, t4, t5, t6, t7, t8;
   // Valid values to cast, must not throw exceptions
   EXPECT_NO_THROW(t1.fromSec(4294967295.0));
   EXPECT_NO_THROW(t2.fromSec(4294967295.999));
@@ -308,6 +309,12 @@ TEST(Time, CastFromDoubleExceptions)
   EXPECT_THROW(t1.fromSec(4294967296.0), std::runtime_error);
   EXPECT_THROW(t2.fromSec(-0.0001), std::runtime_error);
   EXPECT_THROW(t3.fromSec(-4294967296.0), std::runtime_error);
+  EXPECT_THROW(t4.fromSec(std::numeric_limits<double>::infinity()), std::runtime_error);
+  EXPECT_THROW(t5.fromSec(-std::numeric_limits<double>::infinity()), std::runtime_error);
+  EXPECT_THROW(t6.fromSec(std::numeric_limits<double>::quiet_NaN()), std::runtime_error);
+  // max int64 value is 9223372036854775807
+  EXPECT_THROW(t7.fromSec(9223372036854775808.0), std::runtime_error);
+  EXPECT_THROW(t8.fromSec(-9223372036854775809.0), std::runtime_error);
 }
 
 TEST(Time, OperatorMinusExceptions)
@@ -361,6 +368,36 @@ TEST(Time, OperatorPlusExceptions)
   EXPECT_THROW(t4 + d4, std::runtime_error);
   EXPECT_THROW(t4 + d1, std::runtime_error);
   EXPECT_THROW(t5 + d3, std::runtime_error);
+}
+
+TEST(Time, Constants)
+{
+  EXPECT_EQ(Time::MAX.sec, static_cast<uint32_t>(-1));
+  EXPECT_EQ(Time::MAX.nsec, 999999999);
+  EXPECT_EQ(Time::MIN.sec, 0);
+  EXPECT_EQ(Time::MIN.nsec, 1);
+  EXPECT_EQ(Time::ZERO.sec, 0);
+  EXPECT_EQ(Time::ZERO.nsec, 0);
+  EXPECT_EQ(Time::UNINITIALIZED.sec, 0);
+  EXPECT_EQ(Time::UNINITIALIZED.nsec, 0);
+
+  EXPECT_EQ(WallTime::MAX.sec, static_cast<uint32_t>(-1));
+  EXPECT_EQ(WallTime::MAX.nsec, 999999999);
+  EXPECT_EQ(WallTime::MIN.sec, 0);
+  EXPECT_EQ(WallTime::MIN.nsec, 1);
+  EXPECT_EQ(WallTime::ZERO.sec, 0);
+  EXPECT_EQ(WallTime::ZERO.nsec, 0);
+  EXPECT_EQ(WallTime::UNINITIALIZED.sec, 0);
+  EXPECT_EQ(WallTime::UNINITIALIZED.nsec, 0);
+
+  EXPECT_EQ(SteadyTime::MAX.sec, static_cast<uint32_t>(-1));
+  EXPECT_EQ(SteadyTime::MAX.nsec, 999999999);
+  EXPECT_EQ(SteadyTime::MIN.sec, 0);
+  EXPECT_EQ(SteadyTime::MIN.nsec, 1);
+  EXPECT_EQ(SteadyTime::ZERO.sec, 0);
+  EXPECT_EQ(SteadyTime::ZERO.nsec, 0);
+  EXPECT_EQ(SteadyTime::UNINITIALIZED.sec, 0);
+  EXPECT_EQ(SteadyTime::UNINITIALIZED.nsec, 0);
 }
 
 /************************************* Duration Tests *****************/
@@ -551,10 +588,68 @@ TEST(Duration, sleepWithSignal)
   ASSERT_TRUE(rc);
 }
 
+TEST(Duration, Constants)
+{
+  EXPECT_EQ(Duration::MAX.sec, std::numeric_limits<int32_t>::max());
+  EXPECT_EQ(Duration::MAX.nsec, 999999999);
+  EXPECT_EQ(Duration::MIN.sec, std::numeric_limits<int32_t>::min());
+  EXPECT_EQ(Duration::MIN.nsec, 0);
+  EXPECT_EQ(Duration::ZERO.sec, 0);
+  EXPECT_EQ(Duration::ZERO.nsec, 0);
+  EXPECT_EQ(Duration::NANOSECOND.sec, 0);
+  EXPECT_EQ(Duration::NANOSECOND.nsec, 1);
+  EXPECT_EQ(Duration::MICROSECOND.sec, 0);
+  EXPECT_EQ(Duration::MICROSECOND.nsec, 1000);
+  EXPECT_EQ(Duration::MILLISECOND.sec, 0);
+  EXPECT_EQ(Duration::MILLISECOND.nsec, 1000000);
+  EXPECT_EQ(Duration::SECOND.sec, 1);
+  EXPECT_EQ(Duration::SECOND.nsec, 0);
+  EXPECT_EQ(Duration::MINUTE.sec, 60);
+  EXPECT_EQ(Duration::MINUTE.nsec, 0);
+  EXPECT_EQ(Duration::HOUR.sec, 60 * 60);
+  EXPECT_EQ(Duration::HOUR.nsec, 0);
+  EXPECT_EQ(Duration::DAY.sec, 60 * 60 * 24);
+  EXPECT_EQ(Duration::DAY.nsec, 0);
+
+  EXPECT_EQ(WallDuration::MAX.sec, std::numeric_limits<int32_t>::max());
+  EXPECT_EQ(WallDuration::MAX.nsec, 999999999);
+  EXPECT_EQ(WallDuration::MIN.sec, std::numeric_limits<int32_t>::min());
+  EXPECT_EQ(WallDuration::MIN.nsec, 0);
+  EXPECT_EQ(WallDuration::ZERO.sec, 0);
+  EXPECT_EQ(WallDuration::ZERO.nsec, 0);
+  EXPECT_EQ(WallDuration::NANOSECOND.sec, 0);
+  EXPECT_EQ(WallDuration::NANOSECOND.nsec, 1);
+  EXPECT_EQ(WallDuration::MICROSECOND.sec, 0);
+  EXPECT_EQ(WallDuration::MICROSECOND.nsec, 1000);
+  EXPECT_EQ(WallDuration::MILLISECOND.sec, 0);
+  EXPECT_EQ(WallDuration::MILLISECOND.nsec, 1000000);
+  EXPECT_EQ(WallDuration::SECOND.sec, 1);
+  EXPECT_EQ(WallDuration::SECOND.nsec, 0);
+  EXPECT_EQ(WallDuration::MINUTE.sec, 60);
+  EXPECT_EQ(WallDuration::MINUTE.nsec, 0);
+  EXPECT_EQ(WallDuration::HOUR.sec, 60 * 60);
+  EXPECT_EQ(WallDuration::HOUR.nsec, 0);
+  EXPECT_EQ(WallDuration::DAY.sec, 60 * 60 * 24);
+  EXPECT_EQ(WallDuration::DAY.nsec, 0);
+}
+
 TEST(Rate, constructFromDuration){
   Duration d(4, 0);
   Rate r(d);
   EXPECT_EQ(r.expectedCycleTime(), d);
+}
+
+TEST(Rate, constructFromDouble){
+  Rate r(0.5);
+  EXPECT_EQ(r.expectedCycleTime(), ros::Duration(2, 0));
+  
+  Rate r2(-0.5);
+  EXPECT_EQ(r2.expectedCycleTime(), ros::Duration(-2, 0));
+  
+  Rate r3(std::numeric_limits<double>::infinity());
+  EXPECT_EQ(r3.expectedCycleTime(), ros::Duration(0, 0));
+
+  EXPECT_THROW(Rate(0.0), std::runtime_error);
 }
 
 TEST(Rate, sleep_return_value_true){
@@ -574,6 +669,19 @@ TEST(WallRate, constructFromDuration){
   WallRate r(d);
   WallDuration wd(4, 0);
   EXPECT_EQ(r.expectedCycleTime(), wd);
+}
+
+TEST(WallRate, constructFromDouble){
+  WallRate r(0.5);
+  EXPECT_EQ(r.expectedCycleTime(), ros::WallDuration(2, 0));
+
+  WallRate r2(-0.5);
+  EXPECT_EQ(r2.expectedCycleTime(), ros::WallDuration(-2, 0));
+
+  WallRate r3(std::numeric_limits<double>::infinity());
+  EXPECT_EQ(r3.expectedCycleTime(), ros::WallDuration(0, 0));
+
+  EXPECT_THROW(WallRate(0.0), std::runtime_error);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
