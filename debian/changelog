@@ -1,0 +1,8 @@
+ros-noetic-roscpp-core (0.7.3-1focal) focal; urgency=high
+
+  * Changed maintainer to Martin Pecka
+  * Contributors: Martin Pecka
+
+ -- Martin Pecka <peckama2@fel.cvut.cz>  Thu, 15 Jun 2023 00:00:00 -0000
+
+
